@@ -12,14 +12,13 @@ import java.util.List;
 import static com.games.purplesnake.BoardDimension.BOARD_HEIGHT;
 import static com.games.purplesnake.BoardDimension.BOARD_WIDTH;
 
-
-public class Snake {
+public class SnakeLogic {
     private final Texture texture;
     private final List<GridPoint2> snakeElements;
     private ControlDirection direction;
     private float timeSinceLastMove;
 
-    public Snake(Texture texture) {
+    public SnakeLogic(Texture texture) {
         this.texture = texture;
         snakeElements = new LinkedList<>();
     }

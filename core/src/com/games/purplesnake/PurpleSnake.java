@@ -10,7 +10,7 @@ public class PurpleSnake extends ApplicationAdapter {
 	private SpriteBatch batch;
 	private Texture snakeElementImage;
 	private Texture foodImage;
-	private Snake snake;
+	private SnakeLogic snakeLogic;
 	private Food food;
 	private boolean gameOver;
 
@@ -19,13 +19,13 @@ public class PurpleSnake extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		snakeElementImage = new Texture("snake.png");
 		foodImage = new Texture("food.png");
-		snake = new Snake(snakeElementImage);
+		snakeLogic = new SnakeLogic(snakeElementImage);
 		food = new Food(foodImage);
 		startNewGame();
 	}
 
 	private void startNewGame() {
-		snake.startGame();
+		snakeLogic.startGame();
 		food.generateRandomPoint();
 		gameOver = false;
 	}
@@ -37,20 +37,20 @@ public class PurpleSnake extends ApplicationAdapter {
 		ScreenUtils.clear(0, 0, 0, 1);
 		batch.begin();
 		food.draw(batch);
-		snake.draw(batch);
+		snakeLogic.draw(batch);
 		batch.end();
 	}
 
 	private void controlGameplay() {
 		if (!gameOver) {
-			snake.controlGameSpeed(Gdx.graphics.getDeltaTime());
+			snakeLogic.controlGameSpeed(Gdx.graphics.getDeltaTime());
 
-			if (snake.isAteFood(food.getPoint())) {
-				snake.lengthenSnake();
+			if (snakeLogic.isAteFood(food.getPoint())) {
+				snakeLogic.lengthenSnake();
 				food.generateRandomPoint();
 			}
 
-			if (snake.isAteItself()) {
+			if (snakeLogic.isAteItself()) {
 				gameOver = true;
 			}
 		}
