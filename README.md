@@ -1,6 +1,6 @@
 A simple snake game that I created myself as part of improving my programming skills.
 
-The game should work properly on following OS: Windows, macOS, Linux.
+The game should work properly on Windows, macOS and Linux.
 
 Importing and running: http://libgdx.com/dev/import-and-running/
 
@@ -11,13 +11,13 @@ I used:
 Created and implemented features:
 
 - creating a board, generating and "animating" a snake and the food in random points
-- the snake moves at a pace that depends on elapsed time not FPS
-- direction reversal lock
-- game over if the snake eats itself
+- the snake "animation" pace depends on elapsed time not FPS
+- locked direction reverse
+- game is over if the snake eats itself
 
 Planned additional features:
 
 - various snake elements
-- restarting the game
+- game restart
 - pausing the game
-- result list
+- result list or score counter
