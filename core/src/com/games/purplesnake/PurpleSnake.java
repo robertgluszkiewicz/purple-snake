@@ -2,6 +2,7 @@ package com.games.purplesnake;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -30,12 +31,6 @@ public class PurpleSnake extends ApplicationAdapter {
 		startNewGame();
 	}
 
-	private void startNewGame() {
-		snakeLogic.startGame();
-		food.generateRandomPoint();
-		gameOver = false;
-	}
-
 	@Override
 	public void render() {
 		controlGameplay();
@@ -45,6 +40,21 @@ public class PurpleSnake extends ApplicationAdapter {
 		food.draw(batch);
 		snakeLogic.draw(batch);
 		batch.end();
+	}
+
+	@Override
+	public void dispose() {
+		batch.dispose();
+		snakeElementImage.dispose();
+		foodImage.dispose();
+		eat.dispose();
+		fail.dispose();
+	}
+
+	private void startNewGame() {
+		snakeLogic.startGame();
+		food.generateRandomPoint();
+		gameOver = false;
 	}
 
 	private void controlGameplay() {
@@ -61,16 +71,12 @@ public class PurpleSnake extends ApplicationAdapter {
 				gameOver = true;
 				fail.play();
 			}
-		}
-	}
 
-	@Override
-	public void dispose() {
-		batch.dispose();
-		snakeElementImage.dispose();
-		foodImage.dispose();
-		eat.dispose();
-		fail.dispose();
+		} else {
+			if (Gdx.input.isKeyJustPressed(Input.Keys.N)) {
+				startNewGame();
+			}
+		}
 	}
 }
 

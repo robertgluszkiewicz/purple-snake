@@ -5,10 +5,8 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.math.GridPoint2;
-
 import java.util.LinkedList;
 import java.util.List;
-
 import static com.games.purplesnake.BoardDimension.BOARD_HEIGHT;
 import static com.games.purplesnake.BoardDimension.BOARD_WIDTH;
 
