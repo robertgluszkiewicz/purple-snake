@@ -14,8 +14,8 @@ public class PurpleSnake extends ApplicationAdapter {
 	private SnakeLogic snakeLogic;
 	private Food food;
 	private boolean gameOver;
-	private Sound eatSound;
-	private Sound gameOverSound;
+	private Sound eat;
+	private Sound fail;
 
 	@Override
 	public void create() {
@@ -24,8 +24,8 @@ public class PurpleSnake extends ApplicationAdapter {
 		foodImage = new Texture("food.png");
 		snakeLogic = new SnakeLogic(snakeElementImage);
 		food = new Food(foodImage);
-		eatSound = Gdx.audio.newSound(Gdx.files.internal("eat.wav"));
-		gameOverSound = Gdx.audio.newSound(Gdx.files.internal("fail.wav"));
+		eat = Gdx.audio.newSound(Gdx.files.internal("eat.wav"));
+		fail = Gdx.audio.newSound(Gdx.files.internal("fail.wav"));
 
 		startNewGame();
 	}
@@ -54,12 +54,12 @@ public class PurpleSnake extends ApplicationAdapter {
 			if (snakeLogic.isAteFood(food.getPoint())) {
 				snakeLogic.lengthenSnake();
 				food.generateRandomPoint();
-				eatSound.play();
+				eat.play();
 			}
 
 			if (snakeLogic.isAteItself()) {
 				gameOver = true;
-				gameOverSound.play();
+				fail.play();
 			}
 		}
 	}
@@ -69,6 +69,8 @@ public class PurpleSnake extends ApplicationAdapter {
 		batch.dispose();
 		snakeElementImage.dispose();
 		foodImage.dispose();
+		eat.dispose();
+		fail.dispose();
 	}
 }
 
