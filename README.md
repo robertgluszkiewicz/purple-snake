@@ -1,1 +1,3 @@
-# purple-snake
+# Purple Snake game
+
+My first simple game
