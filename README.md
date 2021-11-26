@@ -1,4 +1,4 @@
-A simple snake game that I created myself additionally outside the course as part of improving my programming skills.
+A simple snake game that I created myself as part of improving my programming skills. The libraries and concept used are not part of the Java Develeper course.
 
 The game should work properly on Windows, macOS and Linux.
 
