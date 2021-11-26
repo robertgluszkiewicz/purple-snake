@@ -2,6 +2,7 @@ package com.games.purplesnake;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.ScreenUtils;
@@ -13,6 +14,8 @@ public class PurpleSnake extends ApplicationAdapter {
 	private SnakeLogic snakeLogic;
 	private Food food;
 	private boolean gameOver;
+	private Sound eatSound;
+	private Sound gameOverSound;
 
 	@Override
 	public void create() {
@@ -21,6 +24,9 @@ public class PurpleSnake extends ApplicationAdapter {
 		foodImage = new Texture("food.png");
 		snakeLogic = new SnakeLogic(snakeElementImage);
 		food = new Food(foodImage);
+		eatSound = Gdx.audio.newSound(Gdx.files.internal("eat.wav"));
+		gameOverSound = Gdx.audio.newSound(Gdx.files.internal("fail.wav"));
+
 		startNewGame();
 	}
 
@@ -48,10 +54,12 @@ public class PurpleSnake extends ApplicationAdapter {
 			if (snakeLogic.isAteFood(food.getPoint())) {
 				snakeLogic.lengthenSnake();
 				food.generateRandomPoint();
+				eatSound.play();
 			}
 
 			if (snakeLogic.isAteItself()) {
 				gameOver = true;
+				gameOverSound.play();
 			}
 		}
 	}
