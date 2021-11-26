@@ -1,4 +1,4 @@
-A simple snake game that I created myself as part of learning programming.
+A simple snake game that I created myself as part of improving my programming skills.
 
 The game should work properly on following OS: Windows, macOS, Linux.
 
