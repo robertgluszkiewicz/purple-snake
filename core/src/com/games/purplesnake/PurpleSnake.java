@@ -21,6 +21,8 @@ public class PurpleSnake extends ApplicationAdapter {
 	private Sound fail;
 	private String restartInstruction;
 	private BitmapFont font;
+	private int score;
+	private String scoreName;
 
 	@Override
 	public void create() {
@@ -50,9 +52,10 @@ public class PurpleSnake extends ApplicationAdapter {
 			font.draw(
 					batch, restartInstruction,
 					BoardDimension.BOARD_HEIGHT.getDimension() / 2 - 150,
-					BoardDimension.BOARD_HEIGHT.getDimension() / 2
+					BoardDimension.BOARD_WIDTH.getDimension() / 2
 			);
 		}
+		font.draw(batch, scoreName, 5, 15);
 		batch.end();
 	}
 
@@ -69,6 +72,8 @@ public class PurpleSnake extends ApplicationAdapter {
 		snakeLogic.startGame();
 		food.generateRandomPoint();
 		gameOver = false;
+		score = 0;
+		scoreName = "Score: 0";
 	}
 
 	private void controlGameplay() {
@@ -79,6 +84,8 @@ public class PurpleSnake extends ApplicationAdapter {
 				snakeLogic.lengthenSnake();
 				food.generateRandomPoint();
 				eat.play();
+				score++;
+				scoreName = "Score: " + score;
 			}
 
 			if (snakeLogic.isAteItself()) {

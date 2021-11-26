@@ -20,9 +20,9 @@ A simple snake game that I created myself as part of improving my programming sk
    - locked direction reverse
    - game is over if the snake eats itself
    - game restart
+   - score counter
 
 
 5. Planned additional features:
    - various snake elements
    - pausing the game
-   - score counter
