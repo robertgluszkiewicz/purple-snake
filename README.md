@@ -10,7 +10,7 @@ I used:
 
 Created and implemented features:
 
-- creating a board, generating and "animating" a snake and the food in random points
+- creating the board, "animating" a snake and the food in random points
 - simple sound effects
 - the snake "animation" pace depends on elapsed time not FPS
 - locked direction reverse
