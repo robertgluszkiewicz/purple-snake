@@ -26,3 +26,8 @@ A simple snake game that I created myself as part of improving my programming sk
 5. Planned additional features:
    - various snake elements
    - pausing the game
+
+6. Game screen:
+
+
+![Purple-Snake](https://user-images.githubusercontent.com/73834653/143686669-89ae39ad-160e-4348-87a7-50373ebf525f.png)
