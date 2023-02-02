@@ -1,4 +1,4 @@
-A simple snake game that I created myself as part of improving my programming skills. The libraries and concept used are not part of the Java Developer course.
+The Snake game that I created myself as part of improving my programming skills. The libraries and concept used are not part of the Java Developer training.
 
 1. Importing and running: http://libgdx.com/dev/import-and-running/
 
