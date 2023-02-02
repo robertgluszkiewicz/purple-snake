@@ -9,7 +9,7 @@ The Snake game that I created myself as part of improving my programming skills.
 
 
 3. To create and built project I used:
-   - library libGDX 1.10.0 https://libgdx.badlogicgames.com/ci/nightlies/docs/api/
+   - library libGDX 1.10.0 https://javadoc.io/doc/com.badlogicgames.gdx/gdx/1.10.0/
    - Gradle 6.7
 
 
