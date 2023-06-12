@@ -9,7 +9,8 @@ The Snake game that I created myself as part of improving my programming skills.
 
 
 3. To create and built project I used:
-   - library libGDX 1.10.0 https://javadoc.io/doc/com.badlogicgames.gdx/gdx/1.10.0/
+4. - Java 15.0.9
+   - libGDX 1.10.0 https://javadoc.io/doc/com.badlogicgames.gdx/gdx/1.10.0/
    - Gradle 6.7
 
 
@@ -21,11 +22,6 @@ The Snake game that I created myself as part of improving my programming skills.
    - game is over if the snake eats itself
    - game restart
    - score counter
-
-
-5. Planned additional features:
-   - various snake elements
-   - pausing the game
 
 6. Game screen:
 

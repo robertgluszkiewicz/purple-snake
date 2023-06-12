@@ -13,7 +13,7 @@ public class DesktopLauncher {
 		config.resizable = false;
 		config.width = BOARD_WIDTH.getDimension();
 		config.height = BOARD_HEIGHT.getDimension();
-		config.title = "Become the longest Snake! :-)";
+		config.title = "Aspire to be the longest Purple Snake ever!";
 
 		new LwjglApplication(new PurpleSnake(), config);
 	}
